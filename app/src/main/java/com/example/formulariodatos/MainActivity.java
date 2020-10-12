@@ -73,12 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-    Bundle bundle = this.getIntent().getExtras();
-        eText.setText(bundle.getString("FECHA"));
-        eNombre.setText(bundle.getString("NOMBRE"));
-        eTel.setText(bundle.getString("TEL"));
-        eMail.setText(bundle.getString("EMAIL"));
-        eDescripcion.setText(bundle.getString("DESCRIPCION"));
 
     }
 }

@@ -28,31 +28,20 @@ public class Datos extends AppCompatActivity {
         txtTelefono = (TextView)findViewById(R.id.TelefonoIngresado);
         txtEmail = (TextView)findViewById(R.id.EmailIngresado);
         txtDescripcion = (TextView)findViewById(R.id.DescripcionIngresada);
+        btnEditar =(Button)findViewById(R.id.BotonEditar);
 
 
         Bundle bundle = this.getIntent().getExtras();
-        txtFecha.setText(bundle.getString("FECHA"));
-        txtNombre.setText(bundle.getString("NOMBRE"));
-        txtTelefono.setText(bundle.getString("TEL"));
-        txtEmail.setText(bundle.getString("EMAIL"));
-        txtDescripcion.setText(bundle.getString("DESCRIPCION"));
+        txtFecha.setText("Fecha: " + bundle.getString("FECHA"));
+        txtNombre.setText("Nombre: " + bundle.getString("NOMBRE"));
+        txtTelefono.setText("Teléfono: " +bundle.getString("TEL"));
+        txtEmail.setText("Email : " + bundle.getString("EMAIL"));
+        txtDescripcion.setText("Descripción: " + bundle.getString("DESCRIPCION"));
 
-        btnEditar =(Button)findViewById(R.id.BotonEditar);
-        btnEditar.setOnClickListener(new View.OnClickListener() {
-           @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Datos.this, MainActivity.class);
 
-                Bundle b = new Bundle();
-                b.putString("FECHA", txtFecha.getText().toString());
-                b.putString("NOMBRE", txtNombre.getText().toString());
-                b.putString("TEL", txtTelefono.getText().toString());
-                b.putString("EMAIL", txtEmail.getText().toString());
-                b.putString("DESCRIPCION", txtDescripcion.getText().toString());
-                intent.putExtras(b);
-                startActivity(intent);
 
-            }
-    });
+    }
+    public void editar (View view) {
+    finish();
     }
 }
